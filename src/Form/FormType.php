@@ -4,7 +4,9 @@ namespace App\Form;
 
 use App\Entity\InputForm;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\SubmitButton;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class FormType extends AbstractType
@@ -15,7 +17,7 @@ class FormType extends AbstractType
             ->add('arrivalDate')
             ->add('lengthOfVisit')
             ->add('AmountOfPeople')
-        ;
+            ->add('reserve',SubmitType::class, ['attr' => ['class' =>'save']]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
