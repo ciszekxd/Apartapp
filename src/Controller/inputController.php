@@ -1,8 +1,10 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\Houses;
 use App\Entity\InputForm;
 
+use App\Entity\Reservations;
 use App\Form\FormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,6 +36,13 @@ class inputController extends AbstractController
      * @Route("/reserved", name="reserved")
      */
     public function redirected(){
+        $House = $this->getDoctrine()
+            ->getRepository(Reservations::class)
+            ->findAll();
+        var_dump($House[1]);
+
+
+
         return $this->render('submitted.html.twig');
     }
 

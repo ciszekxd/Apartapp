@@ -32,6 +32,11 @@ class Reservations
      */
     private $Rented_to;
 
+    /**
+     * @ORM\Column (type = "decimal", precision=3, scale=0)
+     */
+    private $Reserved_Places;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,17 @@ class Reservations
     public function setRentedTo(\DateTimeInterface $Rented_to): self
     {
         $this->Rented_to = $Rented_to;
+
+        return $this;
+    }
+    public function getReservedPlaces(): ?string
+    {
+        return $this->Reserved_Places;
+    }
+
+    public function setReservedPlaces(string $Reserved_Places): self
+    {
+        $this->Reserved_Places = $Reserved_Places;
 
         return $this;
     }

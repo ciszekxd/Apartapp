@@ -25,12 +25,17 @@ class Houses
     /**
      * @ORM\Column(type="decimal", precision=8, scale=2)
      */
-    private $Peice;
+    private $Price;
 
     /**
      * @ORM\Column(type="decimal", precision=8, scale=2)
      */
     private $Discount;
+
+    /**
+     * @ORM\Column (type = "decimal", precision=3, scale=0)
+     */
+    private $Free_Places;
 
     public function getId(): ?int
     {
@@ -51,12 +56,12 @@ class Houses
 
     public function getPeice(): ?string
     {
-        return $this->Peice;
+        return $this->Price;
     }
 
-    public function setPeice(string $Peice): self
+    public function setPrice(string $Price): self
     {
-        $this->Peice = $Peice;
+        $this->Price = $Price;
 
         return $this;
     }
@@ -69,6 +74,17 @@ class Houses
     public function setDiscount(string $Discount): self
     {
         $this->Discount = $Discount;
+
+        return $this;
+    }
+    public function getFreePlaces(): ?string
+    {
+        return $this->Free_Places;
+    }
+
+    public function setFreePlaces(string $Free_places): self
+    {
+        $this->Free_Places = $Free_places;
 
         return $this;
     }
