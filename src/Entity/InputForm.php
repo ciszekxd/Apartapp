@@ -18,6 +18,13 @@ class InputForm
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=30)
+     */
+
+    private $House_Address;
+
+
+    /**
      * @ORM\Column(type="date")
      */
     private $arrivalDate;
@@ -36,6 +43,19 @@ class InputForm
     {
         return $this->id;
     }
+
+    public function getHouseAddress(): ?string
+    {
+        return $this->House_Address;
+    }
+
+    public function setHouseAddress(string $House_Address): self
+    {
+        $this->House_Address = $House_Address;
+
+        return $this;
+    }
+
 
     public function getArrivalDate(): ?\DateTimeInterface
     {

@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
-</head>
-<body>
+{% extends 'index.html.twig' %}
+
 {% block body %}
-I was submitted :/
+    Submitted, and I see that... <p/>
+    {{ effect }}
 {% endblock %}
-{% block javascripts %}{% endblock %}
-</body>
-</html>
