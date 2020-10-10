@@ -35,7 +35,7 @@ class Houses
     /**
      * @ORM\Column (type = "decimal", precision=3, scale=0)
      */
-    private $Free_Places;
+    private $Places;
 
     public function getId(): ?int
     {
@@ -54,7 +54,7 @@ class Houses
         return $this;
     }
 
-    public function getPeice(): ?string
+    public function getPrice(): ?string
     {
         return $this->Price;
     }
@@ -77,14 +77,14 @@ class Houses
 
         return $this;
     }
-    public function getFreePlaces(): ?string
+    public function getPlaces(): ?string
     {
-        return $this->Free_Places;
+        return $this->Places;
     }
 
-    public function setFreePlaces(string $Free_places): self
+    public function setPlaces(string $Places): self
     {
-        $this->Free_Places = $Free_places;
+        $this->Places = $Places;
 
         return $this;
     }
