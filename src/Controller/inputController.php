@@ -5,7 +5,7 @@ use App\Entity\Houses;
 use App\Entity\InputForm;
 
 use App\Entity\Reservations;
-use App\Form\FormType;
+use App\Form\inputFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -22,12 +22,12 @@ class inputController extends AbstractController
     public Function inputPageLoading(Request $request, SessionInterface $session){
         $input = new inputForm();
 
-        $form = $this->createForm(FormType::class, $input);
+        $form = $this->createForm(inputFormType::class, $input);
 
         $form->handleRequest($request);
 
         //we check given data
-        if($form->isSubmitted()){
+        if($form->isSubmitted() && $form->isValid()){
 
             //first we check if given house address is in our database
             $House = $this->getDoctrine()
